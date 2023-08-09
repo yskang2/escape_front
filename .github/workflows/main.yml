@@ -13,7 +13,7 @@ jobs:
 
       - name: Create zip archive
         run: |
-          find . \( -path './.git' -o -path './.github' -o -path './README.md' \) -prune -o -type f -exec zip source_code.zip {} +
+          find . -type f \( -not -path './.git/*' -and -not -path './.github/*' -and -not -name 'README.md' \) -exec zip source_code.zip {} +
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
@@ -24,5 +24,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_SECRET_REGION }}
-          SOURCE: ./source_code.zip
+          SOURCE: source_code.zip
           DEST: /
