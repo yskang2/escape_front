@@ -2,7 +2,7 @@ name: Upload to S3
 on:
   push:
     branches:
-      - master 
+      - master  # 또는 사용자가 원하는 브랜치
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
     - name: Create zip archive
       run: |
-        zip -r source_code.zip . -x "*.git*" "*.github*" "README.md"
+        zip -r source_code.zip . -x ".git/*" ".github/*" "README.md"
 
     - name: Upload to S3
       uses: jakejarvis/s3-sync-action@master
