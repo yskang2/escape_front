@@ -13,13 +13,8 @@ jobs:
 
       - name: Create zip archive
         run: |
-          # 제외할 파일과 디렉토리 리스트 생성
           EXCLUDE_LIST=".git .github README.md"
-          
-          # 제외 목록을 기반으로 필요한 파일/디렉토리만 임시 디렉토리에 복사한 뒤 압축
-          mkdir temp_zip
-          rsync -av --exclude={${EXCLUDE_LIST}} ./ temp_zip/
-          zip -r source_code.zip temp_zip/
+          zip -r source_code.zip . -x $EXCLUDE_LIST
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
