@@ -13,17 +13,8 @@ jobs:
 
       - name: Create zip archive
         run: |
-          # Create a temporary directory
-          mkdir temp
-
-          # Copy everything except the excluded files/folders
-          rsync -av --exclude='.git' --exclude='.github' --exclude='README.md' ./ temp/
-
-          # Create the zip archive
-          zip -r source_code.zip temp/*
-
-          # Clean up temporary directory
-          rm -rf temp/
+          git archive --format=zip HEAD $(git diff-tree -r --name-only --no-commit-id HEAD^ HEAD | grep -v -E '(\.git|\.github|README\.md)')
+          mv *.zip source_code.zip
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
