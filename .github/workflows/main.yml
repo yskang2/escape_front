@@ -13,8 +13,7 @@ jobs:
 
       - name: Create zip archive
         run: |
-          git archive --format=zip -o source_code.zip HEAD $(git diff-tree -r --name-only --no-commit-id HEAD^ HEAD | grep -v -E '(\.git|\.github|README\.md)')
-          mv *.zip source_code.zip
+          find . \( -path './.git' -o -path './.github' -o -path './README.md' \) -prune -o -type f -exec zip source_code.zip {} +
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
