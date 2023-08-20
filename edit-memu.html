@@ -15,9 +15,9 @@
     <header>
         <div class="navi">
             <div class="left">
-                <a href="./Home.html"><img src="./static/img/logo.png" width="100px"></a>
-                <a href="./Home.html">Home</a>
-                <a href="./edit.html">작성하기</a>
+                <a href="/Home.html"><img src="./static/img/logo.png" width="100px"></a>
+                <a style="color: #393939;" href="/Home.html">Home</a>
+                <a href="/edit.html">작성하기</a>
                 <a href="./interest.html">관심있는 게시물</a>
             </div>
 
@@ -31,13 +31,15 @@
                         <img class="user" src="./static/img/user.png">
                     </label>
                       <ul class="menubars">
-                          <li><a href="./siginup.html">회원가입</a></li>
+                          <li><a href="/siginup.html">회원가입</a></li>
                           <li><a href="./login.html">로그인</a></li>
                           <li><a href="./login.html">마이페이지</a></li>
                       </ul>    
                 </div>
-
+                
                 <!-- 햄버거 버튼 -->
+
+                <div id="header"></div>
                 <div class="hamburger-btn">
                     <input type="checkbox" id="check_box" />
                     <label for="check_box">
@@ -46,35 +48,93 @@
                         <span></span>
                     </label>
                     <div id="side_menu">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">작성하기</a></li>
-                            <li><a href="#">관심있는 게시물</a></li>
-                            <li><a href="#">My</a></li>
-                        </ul>
+                        <div class="top">
+                            <img src="/static/img/logo.png" style="width:100px;">
+                            <div class="login-bar">
+                                <ul>
+                                    <li><a href="/login.html">로그인</a></li>
+                                    <li><a href="/signup.html">회원가입</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">작성하기</a></li>
+                                <li><a href="#">관심있는 게시물</a></li>
+                                <li><a href="#">My</a></li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
+    
     <section class="default-form">
         <div class="popular-contents">
-            <p class="title">관심있는 게시물</p>
-            <div class="tag-wrap">
-                <div class="tag-active">#여름</div>
-                <div class="tag-unactive">#일기</div>
-                <div class="tag-unactive">#약속</div>
+            <p class="title">인기있는 게시물</p>
+            <div class="contents">
+                <div class="content" style="width: 50%; margin-left :0px;height: 130px;">
+                    <div class="top">
+                        <p>Title</p>
+                        <img src="./static/img/heart-fill.png">
+                    </div>
+
+                    <div class="bottom">
+                        <p> 2023. 07. 13</p>
+                        <div>
+                            <img src="./static/img/comment-discussion.png">
+                            <span>23</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content" style="width: 25%;height: 130px;">
+                    <div class="top">
+                        <p>Title</p>
+                        <img src="./static/img/heart-fill.png">
+                    </div>
+
+                    <div class="bottom">
+                        <p> 2023. 07. 13</p>
+                        <div>
+                            <img src="./static/img/comment-discussion.png">
+                            <span>23</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content" style="width: 25%;height: 130px;">
+                    <div class="top">
+                        <p>Title</p>
+                        <img src="./static/img/heart-fill.png">
+                    </div>
+
+                    <div class="bottom">
+                        <p> 2023. 07. 13</p>
+                        <div>
+                            <img src="./static/img/comment-discussion.png">
+                            <span>23</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="home-navi-form">
         <div class="wrap">
+            <div class="title-top">
+                <p class="my-title">내가 쓴 일기</p>
+                <button><a href="./edit.html">일기쓰기</a></button>
+            </div>
             <div class="contents" id="follow-content">
                 <div class="content" style="margin-left: 0;">
                     <div class="thumbnail">
                         <div class="heart">
+                            <div class="disclosure">비공개</div>
                             <div><img src="./static/img/heart.png"></div>
                         </div>
                         <div class="title-wrap">
@@ -105,6 +165,7 @@
                 <div class="content">
                     <div class="thumbnail">
                         <div class="heart">
+                            <div class="public">공개</div>
                             <div><img src="./static/img/heart.png"></div>
                         </div>
                         <div class="title-wrap">
@@ -131,101 +192,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="content">
-                    <div class="thumbnail">
-                        <div class="heart">
-                            <div><img src="./static/img/heart.png"></div>
-                        </div>
-                        <div class="title-wrap">
-                            <p class="editor">작성자</p>
-                            <h3 class="title">제목 넣는고옷</h3>
-                        </div>
-                    </div>
-                    <div class="main-text">
-                        <div class="line-text-wrap">
-                            <p class="line-text">처음 문단을 여기에 간략하게 한줄만 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고</p>
-                        </div>
-                        <div class="info">
-                            <p>2023. 07. 13</p>
-                            <div class="wrap">
-                                <div>
-                                    <img src="./static/img/views-bk.png">
-                                    <span class="views">23</span>
-                                </div>
-                                <div>
-                                    <img src="./static/img/comment-bk.png">
-                                    <span class="comment">23</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <div class="thumbnail">
-                        <div class="heart">
-                            <div><img src="./static/img/heart.png"></div>
-                        </div>
-                        <div class="title-wrap">
-                            <p class="editor">작성자</p>
-                            <h3 class="title">제목 넣는고옷</h3>
-                        </div>
-                    </div>
-                    <div class="main-text">
-                        <div class="line-text-wrap">
-                            <p class="line-text">처음 문단을 여기에 간략하게 한줄만 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고</p>
-                        </div>
-                        <div class="info">
-                            <p>2023. 07. 13</p>
-                            <div class="wrap">
-                                <div>
-                                    <img src="./static/img/views-bk.png">
-                                    <span class="views">23</span>
-                                </div>
-                                <div>
-                                    <img src="./static/img/comment-bk.png">
-                                    <span class="comment">23</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="contents" id="hashtag-content">
-                <div class="content" style="margin-left: 0;">
-                    <div class="thumbnail">
-                        <div class="heart">
-                            <div><img src="./static/img/heart.png"></div>
-                        </div>
-                        <div class="title-wrap">
-                            <p class="editor">작성자</p>
-                            <h3 class="title">제목 넣는고옷</h3>
-                        </div>
-                    </div>
-                    <div class="main-text">
-                        <div class="line-text-wrap">
-                            <p class="line-text">처음 문단을 여기에 간략하게 한줄만 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고</p>
-                        </div>
-                        <div class="info">
-                            <p>2023. 07. 13</p>
-                            <div class="wrap">
-                                <div>
-                                    <img src="./static/img/views-bk.png">
-                                    <span class="views">23</span>
-                                </div>
-                                <div>
-                                    <img src="./static/img/comment-bk.png">
-                                    <span class="comment">23</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </section>
