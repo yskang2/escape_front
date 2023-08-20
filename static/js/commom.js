@@ -18,3 +18,8 @@ function setThumbnail(event) {
 
     reader.readAsDataURL(event.target.files[0]);
 }
+
+//공통헤더
+$(function() {
+  $("header").load("header.html")
+})
