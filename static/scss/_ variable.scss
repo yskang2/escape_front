@@ -10,11 +10,9 @@ $small-font-size: 0.85em;
 $base-font-size: 1em;
 $title-font-size :1.5em;
 
-
 $mobile: 350px;
 $tablet: 700px;
-$desktop: 1024px;
-
+$desktop: 1240px;
 
 @mixin mobile{
     @media (max-width: $mobile){
@@ -29,7 +27,7 @@ $desktop: 1024px;
 }
   
 @mixin desktop{
-    @media (min-width: $desktop){
+    @media (max-width: $desktop){
       @content;
     }
 }

@@ -13,6 +13,70 @@
 }
 @include desktop{
     body{
-        background: gray;
+        // background-color: gray;
+        header{
+            .navi{
+                padding: 20px 32px;
+                display: flex;
+                justify-content: space-between;            
+                .left{
+                    .home-memu{
+                        display: none;
+                    }
+                    .edit-menu{
+                        display: none;
+                    }
+                    .interest{
+                        display: none;
+                    }
+                }
+                .right{
+                    display: none;
+                }
+
+                .hamburger-btn{
+                    display: inline-block;
+                }
+            }
+        }
+        .default-form{
+            padding: 70px 40px;
+            .popular-contents{
+                .contents{
+                    .content{
+                        padding: 18px;
+                        .top{
+                            p{
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                        .bottom{
+                            p{
+                                font-size: $small-font-size;
+                            }
+                            div{
+                                img{
+                                    width: 16px;
+                                    margin-right: 5px;
+                                }
+                                span{
+                                    font-size: $small-font-size;
+                                }
+                            }
+                        }
+                    }
+                    .content:nth-child(3){
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+
+        .home-navi-form{
+            padding: 70px 40px;
+        }
     }
+    
 }
