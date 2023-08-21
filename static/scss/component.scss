@@ -1,0 +1,18 @@
+@import "./\ variable";
+
+@include mobile{ 
+    body{
+        background: pink;
+    }   
+}
+
+@include tablet{ 
+    body{
+        background: blanchedalmond;
+    }
+}
+@include desktop{
+    body{
+        background: gray;
+    }
+}
