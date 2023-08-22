@@ -721,9 +721,14 @@ body{
         margin-top: 100px;
         padding: 50px 150px;
         box-sizing: border-box;
+        img{
+            width: 100px;
+            margin: 10px 0;
+        }
         div ul{
             display: flex;
-            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid $gray2;
             flex-wrap: wrap;
             li{
                 margin-right: 15px;

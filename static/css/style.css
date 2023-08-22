@@ -6,7 +6,13 @@
 }
 @media (min-width: 350px) and (max-width: 700px) {
   body {
-    background: blanchedalmond;
+    background: red;
+  }
+  body footer {
+    padding: 30px 40px;
+  }
+  body footer div ul li {
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 1240px) {
@@ -795,9 +801,14 @@ body footer {
   padding: 50px 150px;
   box-sizing: border-box;
 }
+body footer img {
+  width: 100px;
+  margin: 10px 0;
+}
 body footer div ul {
   display: flex;
-  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #E2E3E4;
   flex-wrap: wrap;
 }
 body footer div ul li {
