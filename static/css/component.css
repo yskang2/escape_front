@@ -4,8 +4,18 @@
   }
 }
 @media (min-width: 350px) and (max-width: 700px) {
-  body {
-    background: red;
+  body .login-form h2 {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+  }
+  body .login-form .input-form input {
+    font-size: 0.9em;
+  }
+  body .login-form .terms {
+    padding: 0 7px;
+  }
+  body .login-form .terms .box p {
+    font-size: 0.9em;
   }
   body footer {
     padding: 30px 40px;

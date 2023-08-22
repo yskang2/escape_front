@@ -8,10 +8,10 @@
   body {
     background: red;
   }
-  body footer {
+  body .login-form footer {
     padding: 30px 40px;
   }
-  body footer div ul li {
+  body .login-form footer div ul li {
     margin-bottom: 10px;
   }
 }

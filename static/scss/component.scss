@@ -8,7 +8,28 @@
 
 @include tablet{ 
     body{
-        background: red;
+        // background: red;
+
+        .login-form{
+            h2{
+                font-size: 1.3em;
+                margin-bottom: 40px;
+            }
+            .input-form{
+                input{
+                    font-size: 0.9em;
+                }
+            }
+            .terms{
+                padding: 0 7px;
+                .box{
+                    p{
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+
         footer{
             padding: 30px 40px;
             div{
