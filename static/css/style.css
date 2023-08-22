@@ -798,7 +798,12 @@ body footer {
 body footer div ul {
   display: flex;
   margin-top: 50px;
+  flex-wrap: wrap;
 }
 body footer div ul li {
   margin-right: 15px;
+}
+body footer div ul li a {
+  color: #fff;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

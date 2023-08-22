@@ -22,5 +22,6 @@ function setThumbnail(event) {
 //공통헤더
 $(function() {
   $("header").load("/header.html")
+  $("footer").load("/footer.html")
 })
 

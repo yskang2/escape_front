@@ -8,7 +8,17 @@
 
 @include tablet{ 
     body{
-        background: blanchedalmond;
+        background: red;
+        footer{
+            padding: 30px 40px;
+            div{
+                ul{
+                    li{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
     }
 }
 @include desktop{

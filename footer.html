@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>로그인</title>
+        <title>Footer</title>
         <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
         <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon">
@@ -22,32 +22,17 @@
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     </head>
 <body>
-    <header id="header"></header>
-
-    <section class="login-form">
+    <footer id="footer">
+        <img src="/static/img/logo-white.png">
         <div>
-            <h2>로그인</h2>
-            <div class="input-form">
-                <input type="text" placeholder="아이디 입력">
-                <input type="password" placeholder="비밀번호 입력">
-                <a href="./find_password.html">비밀번호를 잊으셨나요?</a>
-            </div>
-            <div class="login-btn">
-                <button>
-                    로그인
-                </button>
-                <p>아직 회원이 아니신가요? <a href="./siginup.html"><span>회원가입</span></a></p>
-            </div>
+            <ul>
+                <li><a href="">소개</a></li>
+                <li><a href="">공지사항</a></li>
+                <li><a href="">자주 묻는 질문</a></li>
+                <li><a href="">문의</a></li>
+                <li><a href="">개인정보처리방침</a></li>
+            </ul>
         </div>
-    </section>
-
-    <footer id="footer"></footer>
-
-        <script>
-            $(function(){
-                $("#header").load("header.html");
-                $("#footer").load("footer.html");
-            });
-        </script>
+    </footer>
 </body>
 </html>
