@@ -67,8 +67,9 @@
     padding: 10px 14px;
     font-weight: 500;
   }
-  body .edit-form-wrap .post p {
-    font-size: 0.9em;
+  body .edit-form-wrap .post {
+    padding: 50px 20px 20px 20px p;
+    padding-font-size: 0.9em;
   }
   body .edit-form-wrap .post-footer .wrap .collection-tag .submit-tag {
     font-size: 0.9em;

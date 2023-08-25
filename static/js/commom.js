@@ -83,3 +83,57 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const itemList = document.getElementById('item-list');
+    const pagination = document.getElementById('pagination');
+    
+    const itemsPerPage = 5; // 페이지당 아이템 수
+    const items = generateItems(20); // 가상의 아이템 생성
+    
+    let currentPage = 1; // 현재 페이지
+
+    function generateItems(count) {
+        const items = [];
+        for (let i = 1; i <= count; i++) {
+            items.push(`Item ${i}`);
+        }
+        return items;
+    }
+
+    function renderItems(page) {
+        itemList.innerHTML = ''; // 목록 초기화
+
+        const startIdx = (page - 1) * itemsPerPage;
+        const endIdx = startIdx + itemsPerPage;
+        const displayedItems = items.slice(startIdx, endIdx);
+
+        displayedItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = item;
+            itemList.appendChild(listItem);
+        });
+    }
+
+    function renderPagination() {
+        pagination.innerHTML = ''; // 페이지네이션 초기화
+
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            pageButton.addEventListener('click', function () {
+                currentPage = i;
+                renderItems(currentPage);
+                renderPagination();
+            });
+            pagination.appendChild(pageButton);
+        }
+    }
+
+    // 초기 페이지 렌더링
+    renderItems(currentPage);
+    renderPagination();
+});
+
+
