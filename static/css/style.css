@@ -68,6 +68,9 @@
     padding: 10px 14px;
     font-weight: 500;
   }
+  body .edit-form-wrap .post-footer .wrap .collection-tag .submit-tag {
+    font-size: 0.9em;
+  }
 }
 @media (max-width: 1240px) {
   body header .navi {
@@ -812,6 +815,54 @@ body .edit-form-wrap .thumnail-img {
   width: 100%;
   height: 17em;
 }
+body .edit-form-wrap .thumnail-img .wrap {
+  max-width: 1000px;
+  padding: 100px 20px 20px 20px;
+  margin: auto;
+  padding: 40px 20px;
+  height: 17em;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+body .edit-form-wrap .thumnail-img .wrap .top {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+body .edit-form-wrap .thumnail-img .wrap .top img {
+  margin-right: 10px;
+  width: 20px;
+}
+body .edit-form-wrap .thumnail-img .wrap .bottom h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #fff;
+}
+body .edit-form-wrap .thumnail-img .wrap .bottom div {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+body .edit-form-wrap .thumnail-img .wrap .bottom div p {
+  font-size: 1em;
+}
+body .edit-form-wrap .thumnail-img .wrap .bottom div .comment {
+  display: flex;
+  align-items: center;
+}
+body .edit-form-wrap .thumnail-img .wrap .bottom div .comment img {
+  width: 19px;
+  margin-right: 7px;
+}
+body .edit-form-wrap .thumnail-img .wrap .bottom div .comment span {
+  font-size: 0.85em;
+}
 body .edit-form-wrap .edit-form {
   max-width: 1000px;
   margin: auto;
@@ -890,7 +941,7 @@ body .edit-form-wrap .post-footer .wrap .collection-tag .submit-tag {
   padding: 10px 17px;
   margin-right: 10px;
   background-color: #E2E3E4;
-  width: 72px;
+  text-align: center;
 }
 body .edit-form-wrap .post-footer .wrap .comment .number {
   display: flex;

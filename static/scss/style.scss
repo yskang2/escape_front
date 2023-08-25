@@ -645,9 +645,7 @@ body{
                                 height: 37px;
                                 .line-text{
                                     margin-top: 20px;
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
+                                    @include text-overflow;
                                 }
                             }
                             .info{
@@ -686,6 +684,52 @@ body{
             background-image: url(/static/img/default-image.png);
             width: 100%;
             height: 17em;
+            .wrap{
+                @include post-w;
+                padding: 40px 20px;
+                height: 17em;
+                display: flex;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                position: relative;
+                .top{
+                    position: absolute;
+                    top: 40px;
+                    right: 0;
+                    img{
+                        margin-right: 10px;
+                        width: 20px;
+                    }
+                }
+                .bottom{
+                    h2{
+                        @include text-overflow;
+                        font-size: 2em;
+                        margin-bottom: 40px;
+                        color: #fff;
+                    }
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        color: #fff;
+                        p{
+                            font-size: $base-font-size;
+                        }
+                        .comment{
+                            display: flex;
+                            align-items: center;
+                            img{
+                                width: 19px;
+                                margin-right: 7px;
+                            }
+                            span{
+                                font-size: $small-font-size;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .edit-form{
@@ -744,7 +788,7 @@ body{
                         padding: 10px 17px;
                         margin-right: 10px;
                         background-color: $gray2;
-                        width: 72px;
+                        text-align: center;
                     }
                 }
                 .comment{

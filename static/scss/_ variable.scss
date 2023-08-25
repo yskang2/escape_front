@@ -107,3 +107,9 @@ $desktop: 1240px;
     padding: 100px 20px 20px 20px;
     margin: auto;
 }
+
+@mixin text-overflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
