@@ -137,14 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// 메뉴 클릭시 font-color 변경
 
-// function home_active(){
-//     var home = document.getElementById("home");
-
-//     home.style.color ="red"
-// }
-
+// 팔로우별, 해시태그별 메뉴
 function hashtag(){
     const hashtag_btn = document.getElementById("hashtagbtn");
     const followbtn = document.getElementById("followbtn");
@@ -170,3 +164,24 @@ function follow(){
     hashtag_btn.style.color = "#E2E3E4";
     
 }
+
+// 텍스트 에디터
+const editor = new toastui.Editor({
+    el: document.querySelector('#editor'),
+    previewStyle: 'vertical',
+    height: '500px',
+    initialValue: '여기에 일기를 자유롭게 작성해주세요 !'
+});
+
+//썸네일
+function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      document.getElementById('preview').src = "";
+    }
+  }

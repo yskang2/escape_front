@@ -25,7 +25,7 @@
     margin-top: 80px;
   }
   body .login-form .follow-post div .thumnail {
-    width: 110px;
+    width: 130px;
     height: 110px;
     margin: 5px;
   }
@@ -42,11 +42,17 @@
     padding: 40px 20px !important;
   }
   body .home-navi-form .wrap .title-top {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
   }
   body .home-navi-form .wrap .title-top .my-title {
     font-size: 1.3em;
     margin-bottom: 0px;
+  }
+  body .home-navi-form .wrap .title-top button {
+    padding: 10px 15px;
+  }
+  body .home-navi-form .wrap .title-top button a {
+    font-size: 0.9em;
   }
   body .home-navi-form .wrap .contents {
     display: flex;
@@ -77,6 +83,14 @@
   }
   body .home-navi-form .wrap .navi #hashtagbtn {
     font-size: 1.3em;
+  }
+  body .home-navi-form .wrap #hashtag_content .tag-wrap {
+    padding: 16px 0;
+  }
+  body .home-navi-form .wrap #hashtag_content .tag-wrap .tag-active, body .home-navi-form .wrap #hashtag_content .tag-wrap .tag-unactive {
+    font-size: 0.8em;
+    padding: 10px 14px;
+    font-weight: 500;
   }
   body .default-form {
     padding: 40px 20px !important;
@@ -171,7 +185,7 @@ body {
 body header {
   border-bottom: 1px solid #EEE;
   background: #FFF;
-  box-shadow: 0px 6px 28px 10px rgba(14, 14, 14, 0.05);
+  box-shadow: 0px 1px 38px 0px rgba(14, 14, 14, 0.05);
   position: relative;
   z-index: 99;
 }
@@ -189,7 +203,7 @@ body header .navi .left {
 }
 body header .navi .left a {
   text-decoration: none;
-  color: #9EA0B6;
+  color: #393939;
   margin-right: 60px;
   font-size: 1em;
   font-weight: 600;
@@ -888,18 +902,23 @@ body .edit-form-wrap .deemd {
   width: 100%;
   height: 17em;
   position: absolute;
+  height: 27em;
 }
 body .edit-form-wrap .thumnail-img {
-  background-image: url(/static/img/default-image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
-  height: 17em;
+  height: 27em;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 body .edit-form-wrap .thumnail-img .wrap {
   max-width: 1000px;
   padding: 100px 20px 20px 20px;
   margin: auto;
   padding: 0px 20px;
-  height: 17em;
+  height: 25em;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -947,6 +966,30 @@ body .edit-form-wrap .edit-form {
   margin: auto;
   padding: 20px;
 }
+body .edit-form-wrap .edit-form label {
+  float: right;
+  margin-bottom: 40px;
+}
+body .edit-form-wrap .edit-form label .btn-upload {
+  width: 130px;
+  height: 42px;
+  background: #fff;
+  border: 1px solid rgb(77, 77, 77);
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .edit-form-wrap .edit-form label .btn-upload:hover {
+  background: #4F5AF6;
+  color: #fff;
+  border: none;
+}
+body .edit-form-wrap .edit-form #file {
+  display: none;
+}
 body .edit-form-wrap .edit-form .thumnail-btn {
   padding: 13px;
   color: #fff;
@@ -978,7 +1021,7 @@ body .edit-form-wrap .edit-form .content input {
   padding: 16px;
   font-size: 1em;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 body .edit-form-wrap .post {
   max-width: 1000px;

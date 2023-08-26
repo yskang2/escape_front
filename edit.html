@@ -19,22 +19,26 @@
         <link rel="stylesheet" href="./static/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     </head>
 <body>
     <header id="header"></header>
     
     <section class="edit-form-wrap">
         <div class="deemd"></div>
-        <div class="thumnail-img" id="image_container">
+        <!-- <div class="thumnail-img" id="image_container"></div> -->
+        <img class="thumnail-img" id="preview" />
             
-        </div>
         <div class="edit-form">
-            <input class="thumnail-btn" type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/>
-                썸네일 등록하기
-            </button>
+            <label for="file">
+                <div class="btn-upload">썸네일 등록</div>
+            </label>
+            <input type="file" onchange="readURL(this);" id="file">
+
             <div class="content">
                 <input type="text" placeholder="제목을 입력해주세요">
-                <div id="summernote"></div> 
+                <div id="editor"></div>
             </div>
         </div>
     </section>
@@ -47,6 +51,6 @@
             $("#footer").load("footer.html");
         });
     </script>
-    
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 </body>
 </html>
