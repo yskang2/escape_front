@@ -565,6 +565,7 @@ body{
                     padding: 10px 17px;
                     a{
                         color: #fff;
+                        text-decoration: none;
                     }
                 }
             }
@@ -576,7 +577,7 @@ body{
                     list-style: none;
                     margin-right: 20px;
                     cursor: pointer;
-                    color: $gray2;
+                    color: #393939;
                     display: block;
                 }
 
@@ -594,7 +595,6 @@ body{
                 display: flex;
                 flex-wrap: nowrap;
                 margin-bottom: 60px;
-            
                     .content{
                         width: 23.7%;
                         margin: 10px;
@@ -673,8 +673,27 @@ body{
                             }
                         }
                     }
-                
-            
+            }
+            #hashtag_content{
+                display: none;
+                .tag-wrap{
+                    display: flex;
+                    align-items: center;
+                    padding: 0 0 20px 0;
+                    border-bottom: 1px solid $gray1;
+                    margin-bottom: 30px;
+                    .tag-active{
+                        @include btn-style;
+                        padding: 10px 17px;
+                        margin-right: 10px;
+                    }
+                    .tag-unactive{
+                        @include btn-style;
+                        padding: 10px 17px;
+                        margin-right: 10px;
+                        background-color: $gray2;
+                    }
+                }
             }
         }
     }
@@ -689,9 +708,8 @@ body{
             height: 17em;
             .wrap{
                 @include post-w;
-                padding: 40px 20px;
+                padding: 0px 20px;
                 height: 17em;
-                display: flex;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
@@ -716,6 +734,7 @@ body{
                         display: flex;
                         justify-content: space-between;
                         color: #fff;
+                        margin-bottom: 12px;
                         p{
                             font-size: $base-font-size;
                         }

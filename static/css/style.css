@@ -21,6 +21,17 @@
   body .login-form .terms .box p {
     font-size: 0.9em;
   }
+  body .login-form .follow-post {
+    margin-top: 80px;
+  }
+  body .login-form .follow-post div .thumnail {
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+  }
+  body .login-form .find-password {
+    margin-top: 80px;
+  }
   body footer {
     padding: 30px 40px;
   }
@@ -29,6 +40,13 @@
   }
   body .home-navi-form {
     padding: 40px 20px !important;
+  }
+  body .home-navi-form .wrap .title-top {
+    margin-bottom: 20px;
+  }
+  body .home-navi-form .wrap .title-top .my-title {
+    font-size: 1.3em;
+    margin-bottom: 0px;
   }
   body .home-navi-form .wrap .contents {
     display: flex;
@@ -54,6 +72,12 @@
     font-size: 0.8em;
     color: #9EA0B6;
   }
+  body .home-navi-form .wrap .navi #followbtn {
+    font-size: 1.3em;
+  }
+  body .home-navi-form .wrap .navi #hashtagbtn {
+    font-size: 1.3em;
+  }
   body .default-form {
     padding: 40px 20px !important;
   }
@@ -67,6 +91,20 @@
     font-size: 0.8em;
     padding: 10px 14px;
     font-weight: 500;
+  }
+  body .default-form .popular-contents .contents {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  body .default-form .popular-contents .contents .content {
+    width: 100% !important;
+    margin: 0 0 15px 0;
+    height: 130px;
+  }
+  body .default-form .popular-contents .contents .content .top img {
+    width: 22px;
   }
   body .edit-form-wrap .post {
     padding: 50px 20px 20px 20px p;
@@ -690,6 +728,7 @@ body .home-navi-form .wrap .title-top button {
 }
 body .home-navi-form .wrap .title-top button a {
   color: #fff;
+  text-decoration: none;
 }
 body .home-navi-form .wrap .navi {
   display: flex;
@@ -702,7 +741,7 @@ body .home-navi-form .wrap .navi #followbtn {
   list-style: none;
   margin-right: 20px;
   cursor: pointer;
-  color: #E2E3E4;
+  color: #393939;
   display: block;
 }
 body .home-navi-form .wrap .navi #hashtagbtn {
@@ -811,6 +850,39 @@ body .home-navi-form .wrap .contents .content .main-text .info .wrap div img {
   margin-right: 4px;
   width: 17px;
 }
+body .home-navi-form .wrap #hashtag_content {
+  display: none;
+}
+body .home-navi-form .wrap #hashtag_content .tag-wrap {
+  display: flex;
+  align-items: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid #9EA0B6;
+  margin-bottom: 30px;
+}
+body .home-navi-form .wrap #hashtag_content .tag-wrap .tag-active {
+  padding: 13px;
+  color: #fff;
+  background-color: #4F5AF6;
+  border-style: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 10px 17px;
+  margin-right: 10px;
+}
+body .home-navi-form .wrap #hashtag_content .tag-wrap .tag-unactive {
+  padding: 13px;
+  color: #fff;
+  background-color: #4F5AF6;
+  border-style: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 10px 17px;
+  margin-right: 10px;
+  background-color: #E2E3E4;
+}
 body .edit-form-wrap .deemd {
   background: rgba(0, 0, 0, 0.3);
   width: 100%;
@@ -826,9 +898,8 @@ body .edit-form-wrap .thumnail-img .wrap {
   max-width: 1000px;
   padding: 100px 20px 20px 20px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 0px 20px;
   height: 17em;
-  display: flex;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -855,6 +926,7 @@ body .edit-form-wrap .thumnail-img .wrap .bottom div {
   display: flex;
   justify-content: space-between;
   color: #fff;
+  margin-bottom: 12px;
 }
 body .edit-form-wrap .thumnail-img .wrap .bottom div p {
   font-size: 1em;
