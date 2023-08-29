@@ -27,10 +27,10 @@
         <div>
             <h2>회원가입</h2>
             <div class="input-form">
-                <input type="text" placeholder="아이디 입력">
-                <input type="password" placeholder="비밀번호 입력">
-                <input type="password" placeholder="비밀번호 확인">
-                <input type="text"placeholder="닉네임(가입 후에 변경 가능!)">
+                <input type="text" placeholder="아이디 입력" id="email">
+                <input type="password" placeholder="비밀번호 입력" id="password1">
+                <input type="password" placeholder="비밀번호 확인" id="password2">
+                <input type="text"placeholder="닉네임(가입 후에 변경 가능!)" id="name">
             </div>
             <div class="terms">
                 <div class="box all-check">
@@ -52,11 +52,69 @@
                 </div>
             </div>
             <div class="login-btn">
-                <button>
+                <button id="user-join-btm">
                     회원가입
                 </button>
             </div>
         </div>
     </section>
 </body>
+<script>
+    <script>
+        $(document).ready(function() {
+             $("#check1").change(function() {
+                $(".terms input[type='checkbox']").prop("checked", $(this).prop("checked"));
+            });
+            
+            $("#check2, #check3").change(function() {
+                if (!$(this).prop("checked")) {
+                    $("#check1").prop("checked", false);
+                }
+            });
+            
+            $("#user-join-btn").click(function() {
+                var email = $("#email").val();
+                var password1 = $("#password1").val();
+                var password2 = $("#password2").val();
+                var name = $("#name").val();
+                
+                if (email === "" || password1 === "" || password2 === "" || name === "") {
+                    alert("모든 필드를 입력해주세요.");
+                    return;
+                }
+                if (password1 !== password2) {
+                    alert("비밀번호가 일치하지 않습니다.");
+                    return;
+                }
+                
+                if (!$("#check2").is(":checked") || !$("#check3").is(":checked")) {
+                    alert("필수 약관에 동의해주세요.");
+                    return;
+                }
+                
+                $.ajax({
+                    url: "https://escape-api.site/api/join/", 
+                    method: "POST",
+                    data: {
+                        id: email,
+                        pw: password1,
+                        name: name
+                    },
+                    success: function(response) {
+                        if (response.proc === "success") {
+                            alert(response.msg);
+                            location.replace("/")
+                        } else {
+                            alert(response.msg);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert("Error: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+    
+</script>    
 </html>
