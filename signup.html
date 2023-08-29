@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="login-btn">
-                <button id="user-join-btm">
+                <button id="user-join-btn">
                     회원가입
                 </button>
             </div>
@@ -67,6 +67,8 @@
         $("#check2, #check3").change(function() {
             if (!$(this).prop("checked")) {
                 $("#check1").prop("checked", false);
+            }else if($("#check2").prop("checked") && $("#check3").prop("checked")) {
+                $("#check1").prop("checked", true);
             }
         });
         
