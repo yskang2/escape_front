@@ -28,12 +28,12 @@
         <div>
             <h2>로그인</h2>
             <div class="input-form">
-                <input type="text" placeholder="아이디 입력">
-                <input type="password" placeholder="비밀번호 입력">
+                <input type="text" placeholder="아이디 입력" id="username">
+                <input type="password" placeholder="비밀번호 입력" id="password">
                 <a href="/find_password.html">비밀번호를 잊으셨나요?</a>
             </div>
             <div class="login-btn">
-                <button>
+                <button id="login-button">
                     로그인
                 </button>
                 <p>아직 회원이 아니신가요? <a href="/signup.html"><span>회원가입</span></a></p>
@@ -47,6 +47,35 @@
             $(function(){
                 $("#header").load("header.html");
                 $("#footer").load("footer.html");
+            });
+
+            $("#login-button").click(function() {
+                let username = $("#username").val();
+                let password = $("#password").val();
+                if(username == "") {
+                    alert("아이디를 입력해주세요.")
+                    return false;
+                }
+
+                if(password == "") {
+                    alert("패스워드를 입력해주세요.")
+                    return false;
+                }
+                $.ajax({
+                    url: "https://escape-api.site/api/login/",
+                    method: "POST",
+                    data: {
+                        username: username,
+                        password: password
+                    },
+                    success: function(response) {
+                        console.log("Login successful");
+                        location.replace("/");
+                    },
+                    error: function(xhr, status, error) {
+                        alert("계정 정보를 확인해주세요.");
+                    }
+                });
             });
         </script>
 </body>
