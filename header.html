@@ -40,7 +40,7 @@
                     <label for="check-btn">
                         <img class="user" src="./static/img/user.png">
                     </label>
-                      <ul class="menubars">
+                      <ul class="menubars" id="user_info_menu1">
                           <li><a href="/signup.html">회원가입</a></li>
                           <li><a href="/login.html">로그인</a></li>
                           <li><a href="/mypage.html">마이페이지</a></li>
@@ -60,9 +60,10 @@
                     <div class="top">
                         <img src="/static/img/logo.png" style="width:100px;">
                         <div class="login-bar">
-                            <ul>
+                            <ul id="user_info_menu2">
                                 <li><a href="/login.html">로그인</a></li>
                                 <li><a href="/signup.html">회원가입</a></li>
+                                <li><a href="/mypage.html">마이페이지</a></li>
                             </ul>
                         </div>
                     </div>
@@ -80,4 +81,28 @@
         </div>
     </header>
 </body>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "https://escape-api.site/api/login-check/", 
+        method: "GET",
+        success: function(response) {
+            if (response.logged_in) {
+                let html = `
+                    <li><a href="/mypage.html">마이페이지</a></li>
+                    <li><a href="logout()">로그아웃</a></li>
+                `
+                $("#user_info_menu1").empty()
+                $("#user_info_menu2").empty()
+                $("#user_info_menu1").append(html)
+                $("#user_info_menu2").append(html)
+            }
+        }
+    });
+});
+
+function logout() {
+    alert("로그아웃 구현 예정");
+}
+</script>    
 </html>
