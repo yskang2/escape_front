@@ -364,26 +364,29 @@
 
                 function checkToken() {
                     console.log("로그인 인증");
-                    $.ajax({
-                        url: "https://escape-api.site/api/login-check/",
-                        method: "POST",
-                        headers: {
-                            "Authorization": "Bearer " + localStorage.getItem("access_token")
-                        },
-                        success: function(response) {
-                            console.log(response);
-                            if (response && response.logged_in) { // valid 필드 사용
-                                updateUserInfo();
-                            } else {
-                                console.log("토큰 무효화");
+                    if(localStorage.getItem("access_token") != null) {
+                        $.ajax({
+                            url: "https://escape-api.site/api/login-check/",
+                            method: "POST",
+                            headers: {
+                                "Authorization": "Bearer " + localStorage.getItem("access_token")
+                            },
+                            data : { "token" : localStorage.getItem("access_token") },
+                            success: function(response) {
+                                console.log(response);
+                                if (response && response.logged_in) { // valid 필드 사용
+                                    updateUserInfo();
+                                } else {
+                                    console.log("토큰 무효화");
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                console.error("ERROR", error);
+                                console.error("ERROR", xhr);
+                                console.error("ERROR", status);
                             }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error("ERROR", error);
-                            console.error("ERROR", xhr);
-                            console.error("ERROR", status);
-                        }
-                    });
+                        });
+                    }
                 }
                 checkToken()
             });
