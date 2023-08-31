@@ -82,6 +82,7 @@
 <script>
 $(document).ready(function() {
     function checkToken() {
+        alert("로그인 인증");
         $.ajax({
             url: "https://escape-api.site/api/login-check/",
             method: "POST",
