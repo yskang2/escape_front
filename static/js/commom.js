@@ -191,3 +191,15 @@ function parseJwt(token) {
     const base64 = base64Url.replace('-', '+').replace('_', '/');
     return JSON.parse(atob(base64));
 }
+
+function getUserIdFromToken(token) {
+    const [, payloadBase64] = token.split('.');
+    
+    function base64Decode(base64) {
+        const padding = '='.repeat((4 - (base64.length % 4)) % 4);
+        const base64Url = (base64 + padding).replace(/\-/g, '+').replace(/_/g, '/');
+        return JSON.parse(atob(base64Url));
+    }
+    const payload = base64Decode(payloadBase64);
+    return payload.user_id;
+}
