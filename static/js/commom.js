@@ -1,7 +1,7 @@
 // 택스트 editor
-$(document).ready(function() {
-    $('#summernote').summernote();
-  });
+// $(document).ready(function() {
+//     $('#summernote').summernote();
+//   });
 
 
 // 썸네일 등록 js
