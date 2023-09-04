@@ -268,14 +268,10 @@ body{
                 .box{
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
                     margin-bottom: 10px;
-                        .all-check{
-                            padding: 10px 0;
-                            border-bottom: 1px solid $gray2;
-                        }
                         p{
                             @include main-text;
+                            margin-left: 10px;
                         }
 
                         input[type="checkbox"]{
@@ -283,8 +279,8 @@ body{
                         }
                         input[type="checkbox"] + label{
                                 display: inline-block;
-                                width: 25px;
-                                height: 25px;
+                                width: 22px;
+                                height: 23px;
                                 border: 1px solid $gray1;
                                 border-radius: 3px;
                                 position: relative;
@@ -292,12 +288,12 @@ body{
                         input[id="check1"]:checked + label::after{
                             content: "";
                             background-image: url(../img/checked.png);
+                            background-size: 14px;
                             background-repeat: no-repeat;
                             background-position: center;
                             color: #fff;
-                            font-size: 20px;
-                            width: 25px;
-                            height: 25px;
+                            width: 22px;
+                            height: 23px;
                             background-color: $hover-color;
                             border: 1px solid $main-color;
                             border-radius: 3px;
@@ -310,12 +306,12 @@ body{
                         input[id="check2"]:checked + label::after{
                             content: "";
                             background-image: url(../img/checked.png);
+                            background-size: 14px;
                             background-repeat: no-repeat;
                             background-position: center;
                             color: #fff;
-                            font-size: 20px;
-                            width: 25px;
-                            height: 25px;
+                            width: 22px;
+                            height: 23px;
                             background-color: $hover-color;
                             border: 1px solid $main-color;
                             border-radius: 3px;
@@ -328,12 +324,12 @@ body{
                         input[id="check3"]:checked + label::after{
                             content: "";
                             background-image: url(../img/checked.png);
+                            background-size: 14px;
                             background-repeat: no-repeat;
                             background-position: center;
                             color: #fff;
-                            font-size: 20px;
-                            width: 25px;
-                            height: 25px;
+                            width: 22px;
+                            height: 23px;
                             background-color: $hover-color;
                             border: 1px solid $main-color;
                             border-radius: 3px;
@@ -342,6 +338,15 @@ body{
                             left: -1px;
                             top: -1px;
                         }
+                        span{
+                            color: $main-color;
+                            font-weight: 600;
+                        }
+                }
+
+                .all-check{
+                    padding: 10px 0;
+                    border-bottom: 1px solid $gray2;
                 }
             }
 
