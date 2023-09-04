@@ -443,24 +443,20 @@ body .login-form .terms {
 body .login-form .terms .box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 10px;
-}
-body .login-form .terms .box .all-check {
-  padding: 10px 0;
-  border-bottom: 1px solid #E2E3E4;
 }
 body .login-form .terms .box p {
   font-size: 1em;
   color: #393939;
+  margin-left: 10px;
 }
 body .login-form .terms .box input[type=checkbox] {
   display: none;
 }
 body .login-form .terms .box input[type=checkbox] + label {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 23px;
   border: 1px solid #9EA0B6;
   border-radius: 3px;
   position: relative;
@@ -468,12 +464,12 @@ body .login-form .terms .box input[type=checkbox] + label {
 body .login-form .terms .box input[id=check1]:checked + label::after {
   content: "";
   background-image: url(../img/checked.png);
+  background-size: 14px;
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  font-size: 20px;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 23px;
   background-color: #A7ADFB;
   border: 1px solid #4F5AF6;
   border-radius: 3px;
@@ -485,12 +481,12 @@ body .login-form .terms .box input[id=check1]:checked + label::after {
 body .login-form .terms .box input[id=check2]:checked + label::after {
   content: "";
   background-image: url(../img/checked.png);
+  background-size: 14px;
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  font-size: 20px;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 23px;
   background-color: #A7ADFB;
   border: 1px solid #4F5AF6;
   border-radius: 3px;
@@ -502,12 +498,12 @@ body .login-form .terms .box input[id=check2]:checked + label::after {
 body .login-form .terms .box input[id=check3]:checked + label::after {
   content: "";
   background-image: url(../img/checked.png);
+  background-size: 14px;
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  font-size: 20px;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 23px;
   background-color: #A7ADFB;
   border: 1px solid #4F5AF6;
   border-radius: 3px;
@@ -515,6 +511,14 @@ body .login-form .terms .box input[id=check3]:checked + label::after {
   position: absolute;
   left: -1px;
   top: -1px;
+}
+body .login-form .terms .box span {
+  color: #4F5AF6;
+  font-weight: 600;
+}
+body .login-form .terms .all-check {
+  padding: 10px 0;
+  border-bottom: 1px solid #E2E3E4;
 }
 body .login-form .find-result {
   height: 54px;
