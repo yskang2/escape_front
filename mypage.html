@@ -89,7 +89,7 @@
                             success: function(response) {
                                 console.log(response);
                                 if (response && response.logged_in) { // valid 필드 사용
-                                    const decodedToken = parseJwt(localStorage.getItem("access_token")
+                                    const decodedToken = parseJwt(localStorage.getItem("access_token"))
                                     const username = decodedToken.username;
                                     const email = decodedToken.email;
                                     $("#my_name").text(username);
