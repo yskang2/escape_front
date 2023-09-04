@@ -1,4 +1,4 @@
-택스트 editor
+
 $(document).ready(function() {
     $('#summernote').summernote();
   });
