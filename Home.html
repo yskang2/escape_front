@@ -412,7 +412,10 @@
         }
         
         function logout() {
-            alert("로그아웃 구현 예정");
+            if(localStorage.getItem("access_token") != null) {
+                localStorage.removeItem("access_token");
+                location.reload();
+            }
         }
         </script>
     </body>
