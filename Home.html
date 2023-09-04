@@ -5,6 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://dailyg-ui.net/">
+        <meta property="og:title" content="Daily G">
+        <meta property="og:image" content="/static/img/og-img.png">
+        <meta property="og:description" content="당신의 이야기를 자유롭게 기록해보세요 !">
+        <meta property="og:site_name" content="Daily G">
+        <meta property="og:locale" content="en_US">
         <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
         <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon">
@@ -45,7 +52,7 @@
                     <div class="content" style="width: 25%;">
                         <div class="top">
                             <p>Title</p>
-                            <img src="./static/img/heart-fill.png">
+                            <div class="heart" id="heart"></div>
                         </div>
                         <div class="bottom">
                             <p> 2023. 07. 13</p>
@@ -59,7 +66,10 @@
                     <div class="content" style="width: 25%;">
                         <div class="top">
                             <p>Title</p>
-                            <img src="./static/img/heart-fill.png">
+                            <div>
+                                <input type="checkbox">
+                                <label><img src="./static/img/heart-fill.png"></label>
+                            </div>
                         </div>
     
                         <div class="bottom">

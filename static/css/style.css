@@ -677,28 +677,6 @@ body .default-form .popular-contents .contents .content .top p {
   font-weight: 700;
   color: #fff;
 }
-body .default-form .popular-contents .contents .content .top div input[type=checkbox] {
-  background-image: url(../img/heart-fill.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-body .default-form .popular-contents .contents .content .top div input[type=checkbox] + label {
-  display: inline-block;
-  background-image: url(../img/heart.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-body .default-form .popular-contents .contents .content .top div input[id=heart]:checked + label::after {
-  content: "";
-  background-image: url(../img/heart-fill.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #fff;
-  font-size: 20px;
-  position: absolute;
-  left: -1px;
-  top: -1px;
-}
 body .default-form .popular-contents .contents .content .bottom {
   display: flex;
   justify-content: space-between;

@@ -498,33 +498,7 @@ body{
                             @include title-text;
                             color: #fff;
                         }
-
-                        div{
-                            input[type="checkbox"]{
-                                // display: none;
-                                background-image: url(../img/heart-fill.png);
-                                background-repeat: no-repeat;
-                                background-position: center;
-                            }
-                            input[type="checkbox"] + label{
-                                display: inline-block;
-                                background-image: url(../img/heart.png);
-                                background-repeat: no-repeat;
-                                background-position: center;
-                                    
-                            }
-                            input[id="heart"]:checked + label::after{
-                                content: "";
-                                background-image: url(../img/heart-fill.png);
-                                background-repeat: no-repeat;
-                                background-position: center;
-                                color: #fff;
-                                font-size: 20px;
-                                position: absolute;
-                                left: -1px;
-                                top: -1px;
-                            }
-                        }
+                        
                     }
 
                     .bottom{

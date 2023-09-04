@@ -184,4 +184,4 @@ function readURL(input) {
     } else {
       document.getElementById('preview').src = "";
     }
-  }
+}
