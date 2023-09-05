@@ -203,3 +203,22 @@ function getUserIdFromToken(token) {
     const payload = base64Decode(payloadBase64);
     return payload.user_id;
 }
+
+
+function updateUserInfo() {
+    let html = `
+        <li><a href="/mypage.html">마이페이지</a></li>
+        <li><a href="javascript:logout()">로그아웃</a></li>
+    `;
+    $("#user_info_menu1").empty();
+    $("#user_info_menu2").empty();
+    $("#user_info_menu1").append(html);
+    $("#user_info_menu2").append(html);
+}
+
+function logout() {
+    if(localStorage.getItem("access_token") != null) {
+        localStorage.removeItem("access_token");
+        location.reload();
+    }
+}
