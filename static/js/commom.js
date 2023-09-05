@@ -138,32 +138,32 @@
 
 
 
-// // 팔로우별, 해시태그별 메뉴
-// function hashtag(){
-//     const hashtag_btn = document.getElementById("hashtagbtn");
-//     const followbtn = document.getElementById("followbtn");
-//     const follow_c = document.getElementById("follow_content");
-//     const hashtag_c = document.getElementById("hashtag_content");
+// 팔로우별, 해시태그별 메뉴
+function hashtag(){
+    const hashtag_btn = document.getElementById("hashtagbtn");
+    const followbtn = document.getElementById("followbtn");
+    const follow_c = document.getElementById("follow_content");
+    const hashtag_c = document.getElementById("hashtag_content");
 
-//     hashtag_c.style.display="block";
-//     follow_c.style.display ="none";
-//     hashtag_btn.style.color = "#393939";
-//     followbtn.style.color = "#E2E3E4";
+    hashtag_c.style.display="block";
+    follow_c.style.display ="none";
+    hashtag_btn.style.color = "#393939";
+    followbtn.style.color = "#E2E3E4";
     
-// }
+}
 
-// function follow(){
-//     const hashtag_btn = document.getElementById("hashtagbtn");
-//     const followbtn = document.getElementById("followbtn");
-//     const follow_c = document.getElementById("follow_content");
-//     const hashtag_c = document.getElementById("hashtag_content");
+function follow(){
+    const hashtag_btn = document.getElementById("hashtagbtn");
+    const followbtn = document.getElementById("followbtn");
+    const follow_c = document.getElementById("follow_content");
+    const hashtag_c = document.getElementById("hashtag_content");
 
-//     follow_c.style.display ="block";
-//     hashtag_c.style.display ="none";
-//     followbtn.style.color = "#393939";
-//     hashtag_btn.style.color = "#E2E3E4";
+    follow_c.style.display ="block";
+    hashtag_c.style.display ="none";
+    followbtn.style.color = "#393939";
+    hashtag_btn.style.color = "#E2E3E4";
     
-// }
+}
 
 // // 텍스트 에디터
 // const editor = new toastui.Editor({
