@@ -846,6 +846,15 @@ body .home-navi-form .wrap .contents .content .main-text .info .wrap div img {
   margin-right: 4px;
   width: 17px;
 }
+body .home-navi-form .wrap .no-contents {
+  padding: 60px 0;
+}
+body .home-navi-form .wrap .no-contents p {
+  font-size: 1.1em;
+  color: #9EA0B6;
+  text-align: center;
+  font-weight: 500;
+}
 body .home-navi-form .wrap #hashtag_content {
   display: none;
 }

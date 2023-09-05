@@ -653,6 +653,17 @@ body{
                         }
                     }
             }
+
+            .no-contents{
+                padding: 60px 0;
+                p{
+                    font-size: 1.1em;
+                    color: $gray1;
+                    text-align: center;
+                    font-weight: 500;
+                }
+            }
+
             #hashtag_content{
                 display: none;
                 .tag-wrap{
