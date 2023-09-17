@@ -165,26 +165,26 @@ function follow(){
     
 }
 
-// // 텍스트 에디터
-// const editor = new toastui.Editor({
-//     el: document.querySelector('#editor'),
-//     previewStyle: 'vertical',
-//     height: '500px',
-//     initialValue: '여기에 일기를 자유롭게 작성해주세요 !'
-// });
+// 텍스트 에디터
+const editor = new toastui.Editor({
+    el: document.querySelector('#editor'),
+    previewStyle: 'vertical',
+    height: '500px',
+    initialValue: '여기에 일기를 자유롭게 작성해주세요 !'
+});
 
-// //썸네일
-// function readURL(input) {
-//     if (input.files && input.files[0]) {
-//       var reader = new FileReader();
-//       reader.onload = function(e) {
-//         document.getElementById('preview').src = e.target.result;
-//       };
-//       reader.readAsDataURL(input.files[0]);
-//     } else {
-//       document.getElementById('preview').src = "";
-//     }
-// }
+//썸네일
+function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      document.getElementById('preview').src = "";
+    }
+}
 
 function parseJwt(token) {
     const base64Url = token.split('.')[1];
