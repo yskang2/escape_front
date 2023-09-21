@@ -1,9 +1,4 @@
 
-$(document).ready(function() {
-    $('#summernote').summernote();
-  });
-
-
 // 썸네일 등록 js
 function setThumbnail(event) {
     var reader = new FileReader();
