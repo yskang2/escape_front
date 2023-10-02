@@ -51,8 +51,7 @@
             $("#footer").load("footer.html");
         });
         $(document).on("click", ".md-mode", function() {
-              var proseMirrorElement = mdModeElement.querySelector('.ProseMirror');
-              var textContent = proseMirrorElement.textContent.trim();
+              var textContent = $(".ProseMirror").text();
               if (textContent === "여기에 일기를 자유롭게 작성해주세요 !") {
                     $(".ProseMirror").text("");
               }
