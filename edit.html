@@ -41,7 +41,7 @@
                 <div id="editor"></div>
             </div>
 
-            <button style="margin-top:20px; float: right; display:none"><a id="editLink">등록하기</a></button>
+            <button style="margin-top:20px; float: right; display:none" id="edit_btn"><a id="editLink">등록하기</a></button>
         </div>
     </section>
 
@@ -63,7 +63,7 @@
                     success: function(response) {
                         if (response && response.logged_in) {
                                 updateUserInfo();
-                                $("#editLink").css("display", "block");
+                                $("#edit_btn").css("display", "block");
                         } else {
                             alert("로그인이 필요한 페이지입니다.");
                             location.href = "login.html"
