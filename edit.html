@@ -97,7 +97,7 @@
                 return false;
             }
             console.log(getUserIdFromToken(localStorage.getItem("access_token")))
-            if(localStorage.getItem("access_token") != null) {
+            if(localStorage.getItem("access_token") == null || localStorage.getItem("access_token") == "") {
                 alert("로그인이 필요합니다.");
                 location.href = "login.html";
                 return false;
