@@ -37,7 +37,7 @@
             <input type="file" onchange="readURL(this);" id="file">
 
             <div class="content">
-                <input type="text" placeholder="제목을 입력해주세요">
+                <input type="text" placeholder="제목을 입력해주세요" id="title">
                 <div id="editor"></div>
             </div>
 
@@ -87,7 +87,39 @@
 
         document.getElementById("editLink").addEventListener("click", function(event) {
             event.preventDefault();
-            alert("등록하기가 클릭되었습니다.");
+            if($("#title").val() == "") { 
+                alert("제목을 입력해주세요.");
+                return false;
+            }
+
+            if($(".ProseMirror").text() == "") {
+                alert("내용을 입력해주세요.");
+                return false;
+            }
+            console.log(getUserIdFromToken(localStorage.getItem("access_token")))
+            if(localStorage.getItem("access_token") != null) {
+                alert("로그인이 필요합니다.");
+                location.href = "login.html";
+                return false;
+            }else {
+                $.ajax({
+                    url: "https://escape-api.site/api/story/",
+                    method: "POST",
+                    data : { "title" : $("#title").val(),
+                             "user": getUserIdFromToken(localStorage.getItem("access_token")),
+                             "content": $(".ProseMirror").text()
+                           },
+                    success: function(response) {
+                         alert("일기 등록 성공");
+                         location.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("ERROR", error);
+                        console.error("ERROR", xhr);
+                        console.error("ERROR", status);
+                    }
+                });
+            }
         });
     </script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
