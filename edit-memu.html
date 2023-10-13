@@ -192,7 +192,7 @@
         function myDailyList() {
                 const user_id = getUserIdFromToken(localStorage.getItem("access_token"))
                 $.ajax({
-                    url: "https://escape-api.site/api/story/user_id=" + user_id,
+                    url: "https://escape-api.site/api/story/?user_id=" + user_id,
                     method: "GET",
                     success: function(response) {
                         console.log(response.length)
