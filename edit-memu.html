@@ -153,7 +153,7 @@
                                         </a>
                                         <div class="main-text">
                                             <div class="line-text-wrap">
-                                                <p class="line-text">${${list.content}</p>
+                                                <p class="line-text">${list.content}</p>
                                             </div>
                                             <div class="info">
                                                 <p>2023. 07. 13</p>
@@ -172,6 +172,7 @@
                                     </div>
                                 `
                             }
+                            $("#follow-content").append(html)
                         }
                     },
                     error: function(xhr, status, error) {
