@@ -76,72 +76,7 @@
                 <button><a href="./edit.html">일기쓰기</a></button>
             </div>
             <div class="contents" id="follow-content">
-                
-                    <div class="content" style="margin-left: 0;">
-                        <a href="/post.html">
-                            <div class="thumbnail">
-                            <div class="heart">
-                                <div class="disclosure">비공개</div>
-                                <div><img src="./static/img/heart.png"></div>
-                            </div>
-                            <div class="title-wrap">
-                                <p class="editor">작성자</p>
-                                <h3 class="title">제목 넣는고옷</h3>
-                            </div>
-                            </div>
-                        </a>
-                        <div class="main-text">
-                            <div class="line-text-wrap">
-                                <p class="line-text">처음 문단을 여기에 간략하게 한줄만 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고</p>
-                            </div>
-                            <div class="info">
-                                <p>2023. 07. 13</p>
-                                <div class="wrap">
-                                    <div>
-                                        <img src="./static/img/views-bk.png">
-                                        <span class="views">23</span>
-                                    </div>
-                                    <div>
-                                        <img src="./static/img/comment-bk.png">
-                                        <span class="comment">23</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                <div class="content">
-                    <a href="/post.html">
-                        <div class="thumbnail">
-                        <div class="heart">
-                            <div class="public">공개</div>
-                            <div><img src="./static/img/heart.png"></div>
-                        </div>
-                        <div class="title-wrap">
-                            <p class="editor">작성자</p>
-                            <h3 class="title">제목 넣는고옷</h3>
-                        </div>
-                        </div>
-                    </a>
-                    <div class="main-text">
-                        <div class="line-text-wrap">
-                            <p class="line-text">처음 문단을 여기에 간략하게 한줄만 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고</p>
-                        </div>
-                        <div class="info">
-                            <p>2023. 07. 13</p>
-                            <div class="wrap">
-                                <div>
-                                    <img src="./static/img/views-bk.png">
-                                    <span class="views">23</span>
-                                </div>
-                                <div>
-                                    <img src="./static/img/comment-bk.png">
-                                    <span class="comment">23</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="no-contents">
@@ -197,6 +132,47 @@
                     success: function(response) {
                         console.log(response.length)
                         console.log(response)
+                        if(response.length < 1) {
+                            $("#follow-content").css("display", "none");
+                        }else {
+                            let html = ""
+                            for(let i =0; i<response.length; i++) {
+                                let list = response[i];
+                                html += `
+                                    <div class="content">
+                                        <a href="/post.html">
+                                            <div class="thumbnail">
+                                            <div class="heart">
+                                                <div class="public">공개</div>
+                                                <div><img src="./static/img/heart.png"></div>
+                                            </div>
+                                            <div class="title-wrap">
+                                                <h3 class="title">${list.title}</h3>
+                                            </div>
+                                            </div>
+                                        </a>
+                                        <div class="main-text">
+                                            <div class="line-text-wrap">
+                                                <p class="line-text">${${list.content}</p>
+                                            </div>
+                                            <div class="info">
+                                                <p>2023. 07. 13</p>
+                                                <div class="wrap">
+                                                    <div>
+                                                        <img src="./static/img/views-bk.png">
+                                                        <span class="views">23</span>
+                                                    </div>
+                                                    <div>
+                                                        <img src="./static/img/comment-bk.png">
+                                                        <span class="comment">23</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `
+                            }
+                        }
                     },
                     error: function(xhr, status, error) {
                         console.error("ERROR", error);
