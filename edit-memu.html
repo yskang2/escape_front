@@ -157,7 +157,54 @@
         $(function(){
             $("#header").load("header.html");
             $("#footer").load("footer.html");
+
+            if(localStorage.getItem("access_token") != null) {
+                    $.ajax({
+                        url: "https://escape-api.site/api/login-check/",
+                        method: "POST",
+                        headers: {
+                            "Authorization": "Bearer " + localStorage.getItem("access_token")
+                        },
+                        data : { "token" : localStorage.getItem("access_token") },
+                        success: function(response) {
+                            console.log(response);
+                            if (response && response.logged_in) { 
+                                updateUserInfo();
+                                myDailyList();
+                            }else {
+                                alert("로그인이 필요한 페이지입니다.");
+                                location.href = "/";
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("ERROR", error);
+                            console.error("ERROR", xhr);
+                            console.error("ERROR", status);
+                        }
+                    });
+             }else {
+                alert("로그인이 필요한 페이지입니다.");
+                location.href = "/";
+            }
+            
         });
+
+        function myDailyList() {
+                const user_id = getUserIdFromToken(localStorage.getItem("access_token"))
+                $.ajax({
+                    url: "https://escape-api.site/api/story/user_id=" + user_id,
+                    method: "GET",
+                    success: function(response) {
+                        console.log(response.length)
+                        console.log(response)
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("ERROR", error);
+                        console.error("ERROR", xhr);
+                        console.error("ERROR", status);
+                    }
+                });
+        }
     </script>
 </body>
 </html>
