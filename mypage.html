@@ -24,7 +24,7 @@
             <div class="post-info">
                 <div>
                     <span>내가 작성한 게시물</span>
-                    <p>4</p>
+                    <p id="my_cnt">0</p>
                 </div>
                 <div>
                     <span>내가 작성한 댓글</span>
@@ -85,6 +85,7 @@
                                 const username = decodedToken.username;
                                 const email = decodedToken.email;
                                 $("#my_name").text(username);
+                                myDailyList()
                         } else {
                             alert("로그인이 필요한 페이지입니다.");
                             location.href = "login.html"
@@ -98,6 +99,26 @@
                 });
             }
         });
+
+            function myDailyList() {
+                const user_id = getUserIdFromToken(localStorage.getItem("access_token"))
+                $.ajax({
+                    url: "https://escape-api.site/api/story/?user_id=" + user_id,
+                    method: "GET",
+                    success: function(response) {
+                        console.log(response.length)
+                        console.log(response)
+                        if(response.length > 0) {
+                            $("#my_cnt").text(response.length);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("ERROR", error);
+                        console.error("ERROR", xhr);
+                        console.error("ERROR", status);
+                    }
+                });
+        }
     </script>
 </body>
 </html>
