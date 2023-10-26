@@ -100,24 +100,24 @@
             }
         });
 
-            function myDailyList() {
-                const user_id = getUserIdFromToken(localStorage.getItem("access_token"))
-                $.ajax({
-                    url: "https://escape-api.site/api/story/?user_id=" + user_id,
-                    method: "GET",
-                    success: function(response) {
-                        console.log(response.length)
-                        console.log(response)
-                        if(response.length > 0) {
-                            $("#my_cnt").text(response.length);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("ERROR", error);
-                        console.error("ERROR", xhr);
-                        console.error("ERROR", status);
+        function myDailyList() {
+            const user_id = getUserIdFromToken(localStorage.getItem("access_token"))
+            $.ajax({
+                url: "https://escape-api.site/api/story/?user_id=" + user_id,
+                method: "GET",
+                success: function(response) {
+                    console.log(response.length)
+                    console.log(response)
+                    if(response.length > 0) {
+                        $("#my_cnt").text(response.length);
                     }
-                });
+                },
+                error: function(xhr, status, error) {
+                    console.error("ERROR", error);
+                    console.error("ERROR", xhr);
+                    console.error("ERROR", status);
+                }
+            });
         }
     </script>
 </body>
