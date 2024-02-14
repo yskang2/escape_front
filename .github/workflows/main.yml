@@ -1,0 +1,44 @@
+name: Upload to S3
+
+on:
+  push:
+    branches:
+      - react
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: |
+          npm install
+          # If you are using yarn, replace the line above with: yarn install
+
+      - name: Build React app
+        run: npm run build
+        # If you are using yarn, replace the line above with: yarn build
+
+      - name: Create zip archive
+        run: |
+          EXCLUDE_LIST=".git .github README.md node_modules"
+          zip -r build.zip build -x $EXCLUDE_LIST
+
+      - name: Upload to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_SECRET_REGION }}
+          SOURCE: build.zip
+          DEST: /
