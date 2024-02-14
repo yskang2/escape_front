@@ -5,10 +5,9 @@ on:  # workflow 실행 조건
     branches:
       - react # 메인 브랜치가 푸쉬된 경우
 
-
 jobs: # job 설정
-  build: # job id
-    name: react build & deploy
+  react: # job id
+    name: 리액트 build & deploy
     runs-on: ubuntu-20.04
     defaults:
       run:
@@ -16,23 +15,11 @@ jobs: # job 설정
     steps: 
       - name: checkout Github Action
         uses: actions/checkout@v3 # github actions 가상 환경에 해당 레포 소스 가져오기
-
-    # npm package cache 사용하기 : https://github.com/actions/cache/blob/main/examples.md#node---npm
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-      - uses: actions/cache@v3
-        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
       
       - name: install npm dependencies
         run: npm install
-      - name: react build
+
+      - name: React build
         run: npm run build
 
       # aws user 연결
