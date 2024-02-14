@@ -36,7 +36,7 @@ const RecordCreate = () => {
     }
   };
 
-  const handleResponseChange = (e) => {
+  const handleResponseChange = useCallback((e) => {
     const { name, value } = e.target;
     setResponses((prev) => ({ ...prev, [name]: value }));
     if (selectedTypeId === 2) {
@@ -64,7 +64,7 @@ const RecordCreate = () => {
       setScoreP3(newScoreP3);
       setScoreP4(newScoreP4);
     }
-  };
+  }, [selectedTypeId]);
 
   const handleTeamNameChange = (e) => {
     switch (e.target.id) {
