@@ -20,11 +20,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          # If you are using yarn, replace the line above with: yarn install
 
       - name: Build React app
         run: npm run build
-        # If you are using yarn, replace the line above with: yarn build
 
       - name: Create zip archive
         run: |
