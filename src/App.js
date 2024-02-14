@@ -29,7 +29,7 @@ const App = () => {
       setCurrentMode(currentThemeMode);
       setLanguage(currentThemeLanguage);
     }
-  }, []);
+  }, [setCurrentColor, setCurrentMode, setLanguage]);
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
