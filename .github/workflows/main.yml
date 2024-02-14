@@ -21,6 +21,10 @@ jobs:
         run: |
           npm install
 
+      - name: Install react
+        run: |
+          npm install react-scripts --save
+
       - name: Build React app
         run: npm run build
 
